@@ -1,5 +1,5 @@
 import chromadb
-from embedding_model import get_embedding_model
+from embedding_model import get_embeddings
 from chunker import chunk_pages
 from storage import VECTOR_DB_DIR
 
@@ -9,7 +9,7 @@ from storage import VECTOR_DB_DIR
 client = chromadb.PersistentClient(path=str(VECTOR_DB_DIR))
 
 collection = client.get_or_create_collection(
-    name="researchpilot_book"
+    name="researchpilot_book_gemini"
 )
 
 
@@ -24,15 +24,9 @@ def index_documents(pages):
     if not chunks:
         raise ValueError("No text chunks found in the uploaded documents.")
 
-    # Step 2: Generate embeddings
+    # Step 2: Generate Gemini embeddings
     texts = [chunk["text"] for chunk in chunks]
-    model = get_embedding_model()
-    embeddings = model.encode(
-        texts,
-        batch_size=32,
-        show_progress_bar=True,
-        convert_to_numpy=True
-    )
+    embeddings = get_embeddings(texts)
 
     # Step 3: Identify the uploaded documents
     document_names = set(
@@ -58,7 +52,7 @@ def index_documents(pages):
         collection.upsert(
             ids=[chunk["chunk_id"] for chunk in batch_chunks],
 
-            embeddings=batch_embeddings.tolist(),
+            embeddings=batch_embeddings,
 
             documents=[chunk["text"] for chunk in batch_chunks],
 
