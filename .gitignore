@@ -13,3 +13,7 @@ __pycache__/
 
 # Generated data
 data/
+
+# Generated evaluation results
+evaluation/answer_evaluation_results.json
+evaluation/evaluation_scores.json

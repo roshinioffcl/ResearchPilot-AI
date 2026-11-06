@@ -1,1 +1,10 @@
+
+fastapi
+uvicorn[standard]
+python-multipart
+pymupdf
+chromadb
+sentence-transformers
+google-genai
+python-dotenv
 streamlit

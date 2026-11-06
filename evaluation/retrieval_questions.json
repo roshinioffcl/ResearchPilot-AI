@@ -1,0 +1,22 @@
+[
+    {
+        "question": "What is inheritance in Java?",
+        "document": "Head First Java.pdf",
+        "expected_pages": [208, 220, 229]
+    },
+    {
+        "question": "What is an abstract class in Java?",
+        "document": "Head First Java.pdf",
+        "expected_pages": [237, 241, 242, 243, 269]
+    },
+    {
+        "question": "What is the difference between an abstract class and an interface in Java?",
+        "document": "Head First Java.pdf",
+        "expected_pages": [264, 266, 267]
+    },
+    {
+        "question": "What is polymorphism in Java?",
+        "document": "Head First Java.pdf",
+        "expected_pages": [225, 226]
+    }
+]
