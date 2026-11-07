@@ -560,11 +560,7 @@ export default function App() {
                     <div className="shot-bar">
                       <span /><span /><span />
                     </div>
-                    <img
-                      src="/screenshots/workspace.jpeg"
-                      alt="ResearchPilot workspace"
-                      loading="lazy"
-                    />
+                    <img src="/screenshots/answer.jpeg" alt="ResearchPilot answering a question" loading="lazy" />
                   </div>
                 </div>
               </section>
