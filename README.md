@@ -113,7 +113,6 @@ ResearchPilot-AI/
 └── .env.example
 ```
 
-*Adjust this structure to match the actual repository directories.*
 
 ---
 
