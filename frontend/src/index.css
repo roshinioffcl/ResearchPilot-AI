@@ -1,1 +1,14 @@
-@import "tailwindcss";
+:root{
+  --bg:#f4f6fb;--ink:#0d1226;--muted:#56607d;--line:rgba(30,50,120,.10);--line-hot:rgba(50,90,255,.55);
+  --glow:rgba(70,110,255,.20);--card:rgba(255,255,255,.72);--edge:rgba(30,50,120,.14);
+  --accent:#3b62ff;--accent-ink:#fff;--chip:rgba(59,98,255,.12);--danger:#d33a3a;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#060914;--ink:#e8ecfa;--muted:#8e98b8;--line:rgba(120,150,255,.09);--line-hot:rgba(110,150,255,.75);
+  --glow:rgba(80,120,255,.22);--card:rgba(14,20,42,.66);--edge:rgba(120,150,255,.16);
+  --accent:#6f93ff;--accent-ink:#060914;--chip:rgba(111,147,255,.16);--danger:#ff7a7a;}}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Sora,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;overflow-x:hidden;min-height:100vh}
+button,input{font-family:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}

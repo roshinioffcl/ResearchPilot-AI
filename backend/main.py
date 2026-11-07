@@ -1,5 +1,4 @@
-
-
+import traceback
 from pathlib import Path
 import os
 from fastapi import FastAPI, UploadFile, File, HTTPException
@@ -127,9 +126,10 @@ async def upload_document(file: UploadFile = File(...)):
         raise HTTPException(status_code=400, detail=str(error))
 
     except Exception as error:
+        traceback.print_exc()  # prints the real error in the terminal
         raise HTTPException(
             status_code=500,
-            detail="Document processing failed."
+            detail=f"Document processing failed: {error}"
         ) from error
 
     finally:

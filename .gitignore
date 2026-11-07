@@ -5,15 +5,33 @@ __pycache__/
 # Virtual environment
 .venv/
 
-# Environment variables
+# Environment variables (never commit these)
 .env
+.env.*
+!.env.example
+frontend/.env
+frontend/.env.*
 
 # Streamlit
 .streamlit/secrets.toml
 
-# Generated data
+# Generated data (Chroma index + uploaded PDFs)
 data/
+
+# Any PDFs (copyrighted books should not be in a public repo)
+*.pdf
 
 # Generated evaluation results
 evaluation/answer_evaluation_results.json
 evaluation/evaluation_scores.json
+
+# Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

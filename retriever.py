@@ -25,6 +25,10 @@ def retrieve_chunks(question, top_k=10):
         query_embeddings=[query_embedding],
         n_results=top_k
     )
+    print("CHROMA COUNT:", collection.count())
+    print("CHROMA RESULTS:", results["ids"])
+
+    print("RETRIEVAL DISTANCES:", results["distances"])
 
     # Format retrieved results
     retrieved_chunks = []
